@@ -81,19 +81,19 @@ public class MainDialog {
 			System.out.println(" ########################################################### ");
 			
 			// Now we start by collecting affectations
-			/*
+		
 			affectations = AffectationsGeneration.Main.affectationsGeneration();
 			for(String aff : affectations)
 		     {
 		        System.out.println(aff);
 		     }
 		     affectations.clear();
-			*/
 			
-			File file= new File("/home/soumia/Documents/conferencesDifferentVersions/ASE2018/1/Experiments/PMD/PMDAff2.txt");
+			// comment all this when starting recovering graphs
+			File file= new File("path to your generated affectation");
 			FileInputStream fis = new FileInputStream(file);
 			BufferedReader br = new BufferedReader(new InputStreamReader(fis));
-		    //get the first line to calculate application lenght
+		         //get the first line to calculate application lenght
 			String line = null;
 			
 			while ((line = br.readLine()) != null) 
@@ -104,10 +104,10 @@ public class MainDialog {
 			InstrumentationPhase.FieldsofUserDefinedClassType.varNames = refineFields(InstrumentationPhase.FieldsofUserDefinedClassType.varNames);
 			
 			System.out.println(InstrumentationPhase.FieldsofUserDefinedClassType.varNames);
-			// object graph recovery
-	        JsonGraph graph = ObjectGraphRecoveryRefinedVersion.draw(affectations, positions);
+		 	// object graph recovery
+	                 JsonGraph graph = ObjectGraphRecoveryRefinedVersion.draw(affectations, positions);
 	        
-	        //Dominance Tree recovery
+	                //Dominance Tree recovery
 	  		DominatorsRefinedVersion.calculateDominators(graph.nodes, graph.edges);
 	  		System.out.println("object graph size: "+graph.nodes.size());
 	  		// Tree of creation recovery
