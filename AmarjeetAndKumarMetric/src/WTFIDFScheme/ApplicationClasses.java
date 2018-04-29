@@ -28,11 +28,7 @@ public class ApplicationClasses extends AbstractProcessor<CtType>{
 				 classNameReference.put(e.getQualifiedName(), e.getReference());
 				 
 			   }
-			/*if(!appClassesReferences.contains(e.getReference()))
-			  {
-				appClassesReferences.add(e.getReference()); 
-			  }
-			*/	
+			
 			}
 	}	
 }
